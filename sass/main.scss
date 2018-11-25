@@ -1,1 +1,383 @@
-// main SASS file
+@import "partials/variables";
+@import "partials/queries";
+@import "partials/mixins";
+*{
+    padding: 0;
+    margin: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    &:before,
+    &:after{
+        -webkit-box-sizing: inherit;
+        box-sizing: inherit;
+    }
+}
+html{
+    font-size: 16px;
+    font-family: $font_0, $font_1, $font_2, $font_3;
+    line-height: 1.6;
+}
+h1, h2, h3, h4{
+    font-family: $font_4, $font_5, $font_6, $font_7, $font_8;
+}
+ul{
+    list-style: none;
+}
+.clearfix:after{
+    display:table;
+    clear: both;
+    content: "";
+}
+.bg-header{
+    background-color: $white;
+    background-color:$lightblue;
+    color: $darkgrey;
+    border-bottom:1rem solid $medblue;
+    border-top:1rem solid $darkblue;
+    position: relative;
+    &:before,
+    &:after{
+    content:"";
+    position:absolute;
+    bottom:-1rem;
+    width:30%;
+    height:1rem;
+    background-color: $darkblue;}
+    &:before{left:0;}
+    &:after{right:0;}
+}
+.bg-focal{
+    background-color: $lightbrown;
+    color: $darkbrown;
+}
+.bg-content1{
+    background-color: $white;
+    color: $darkgrey;
+}
+.bg-content2{
+    background-color: $lightblue;
+    color: $darkblue;
+}
+.bg-footer{
+    background-color: $white;
+    color: $lightgrey;
+}
+header{
+    width: 400px;
+    margin: 0 auto;
+    position: relative;
+    h1{
+    width: 100%;
+    padding: 0 2rem;}
+    nav{
+    width: 100%;}
+    nav>ul li{
+    width:100%;
+    float: none;}
+}
+section.focal{
+    width: 400px; /* default */
+    margin: 0 auto;}
+
+    section.content1, 
+    section.content2{
+    padding:2rem 0;    
+}
+.row{
+    clear: both;
+}
+.col-2{
+    width:50%;
+    float:left;
+    padding-bottom: 2rem;
+    border-left:1px solid $darkblue;
+    margin-bottom: 2rem;
+}
+footer{
+    padding:2rem 0;
+    & .col-2:first-child{
+    border-left: 0;}
+}
+header nav{
+    padding:2rem 0;
+    clear: both;
+    >ul>li>a{
+    display:block;
+    text-align: center;
+    text-decoration: none;
+    color: $darkgrey;    
+    font-size: 1.414rem;
+    letter-spacing: 0.25rem;
+    border:1px solid $lightgrey; 
+    border-bottom: none;
+    padding:1.0rem 2rem;
+    line-height: 1;
+    background-color: $white;}
+    >ul>li>a:hover{
+    font-weight: 700;
+    color:$darkbrown;}
+    h1{
+    color: $darkbrown;
+    letter-spacing: 0.1rem;}
+    h1 i.fa-lg{
+    display:block;
+    width: 25%;
+    float:left;
+    font-size: 7rem;
+    line-height: 12.7936rem;
+    color: $lightbrown;}
+    h1 i.fa-lg ~ span{
+    float: right;
+    width: 75%;
+    font-size: 3.998rem;
+    padding-left: 1rem;
+    text-align: right;}
+}
+.focal h2{
+    font-size: 1.999rem;
+    line-height: 1.2;
+    padding: 2rem 2rem 1rem 2rem;
+    .author{
+    font-size: 1rem;
+    padding: 0.2rem 2rem 2rem;}
+}
+.content1 h3{
+    font-size:1.999rem;
+    padding: 0.2rem 2rem 2rem;
+    h3 i{
+    vertical-align:middle;
+    padding-right: 2rem;}
+    p{
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem 2rem;}
+}
+.content2 h3{
+    font-size: 1.999rem;
+    padding: 1rem 2rem 0.5rem;
+    h4{
+    font-size: 1.999rem;
+    padding: 1rem 2rem 0rem;}
+    p{
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem 1rem;}
+    li{
+    padding: 0.5rem 2rem;
+    font-size: 1.414rem;}
+}
+footer h4{
+    font-size: 1.414rem;
+    padding: 0.5rem 2rem;
+    color: $darkbrown;
+    p{
+    font-size: 1rem;
+    padding: 0.5rem 2rem;
+    color: $white;}
+    .fa-circle{
+    color: $white;}
+    h4[lang=de]{
+    display:block;}
+    h4[lang=en],
+    h4[lang=ar],
+    h4[lang=ru]{
+    display:none;}
+}
+@media all and (min-width:701px) and (max-width:900px){
+    header{
+        width: 700px;
+        margin: 0 auto;
+        min-height: 8rem;
+        h1{
+        width: 100%;
+        color: $darkbrown;}
+        &:before,
+        &:after{
+        width:230px;}
+        h1 i.fa-lg{
+        color: $darkbrown;
+        @include yolo5;
+        }
+        h1 i.fa-lg ~ span{
+        @include yolo4;}
+        nav{
+        @include yolo3;}
+        nav>ul>li{
+        width:20%;
+        float: left;}
+        nav>ul>li>a{
+        font-size: 1rem;
+        line-height: 2rem;
+        min-height: 6rem;
+        @include yolo1}
+        nav>ul>li>a:last-child{
+        border-right:1px solid $lightgrey;}
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: 700px; 
+        margin: 0 auto;    
+    }
+    .col-4{
+        width:50%;
+        float:left;
+    }
+    section.content2{
+        h4{font-size: 1.414rem;}
+        li{
+        font-size: 1.414rem;}
+    }
+    footer{
+        .fa-circle{color: $medblue;}
+        .col-2:last-child{
+        unicode-bidi: bidi-override;
+        direction: rtl;}
+        h4[lang=ar]{
+        display:block;}
+        h4[lang=de],
+        h4[lang=en],
+        h4[lang=ru]{
+        display:none;}
+    }
+}
+@media all and (min-width:901px) and (max-width: 1400px){
+    header{
+        width: 900px;
+        margin: 0 auto;
+        &:before,
+        &:after{
+        width:300px;}
+        h1{
+        width: 100%;
+        color: $darkblue;}
+        h1 i.fa-lg{
+        @include yolo5;}
+        h1 i.fa-lg ~ span{
+        @include yolo4;}
+        nav{
+        @include yolo3;}
+        nav>ul>li{
+        @include yolo2;}
+        nav>ul>li>a{
+        font-size: 1rem;
+        line-height: 2rem;
+        min-height: 2rem;
+        @include yolo1;}
+        nav>ul>li:first-child a{
+        border-left:none;}
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: 900px; 
+        margin: 0 auto;    
+    }
+    section.focal h2{
+        width: 600px; 
+        margin: 0 auto;
+        p.author{
+        width: 600px; 
+        margin: 0 auto;}
+    }
+    .col-3{
+        @include col-3;
+    }
+    .col-4{
+        @include col-4;
+    }
+    section.content1 h3{
+        font-size: 1.999rem;
+        font-weight: 100;
+        .fa-2x{
+        font-size: 1.999rem;
+        padding-right: 1rem;}
+    }
+    section.content2 h4{
+        @include yolo;
+    }
+    footer {
+        .fa-circle{
+        color: $lightbrown;}
+        h4[lang=ru]{
+        display:block;}
+        h4[lang=de],
+        h4[lang=ar],
+        h4[lang=en]{
+        display:none;}
+    }
+}
+@media all and (min-width:1401px){
+    header{
+        width: 1400px;
+        margin:0 auto;
+        &:before,
+        &:after{
+        width:450px;}
+        h1{
+        width: 100%;
+        color: $darkbrown;}
+        h1 i.fa-lg{
+        color: $darkbrown;
+        @include yolo5;}
+        h1 i.fa-lg ~ span{
+        @include yolo4;}
+        nav{
+        @include yolo3;}
+        nav>ul>li{
+        @include yolo2;}
+        nav>ul>li>a{
+        font-size: 1.414rem;
+        line-height: 2rem;
+        min-height: 2rem;
+        @include yolo1;}
+        nav>ul>li:first-child a{
+        border-left:none;}
+    }
+    section.focal, 
+    section.content1,
+    section.content2,
+    footer{
+        width: 1400px; 
+        margin: 0 auto;    
+    }
+    section.focal h2{
+        font-size: 3.998rem;
+        width: 600px; 
+        margin: 0 auto;
+        p.author{
+        width: 600px; 
+        margin: 0 auto;}
+    }
+    .col-3{
+        @include col-3;
+    }
+    .col-4{
+        @include col-4;
+    }
+    section.content1 h3{
+        font-size: 2.827rem;
+        font-weight: 100;
+        .fa-2x{
+        font-size: 2.827rem;
+        padding-right: 1rem;
+        vertical-align: middle;}
+    }
+    section.content2 h4{
+        @include yolo;
+    }
+    footer{
+        font-size: 1.414rem;
+        letter-spacing: 0.2rem;
+        p:last-child{
+        color: $lightgrey;}
+        .fa-circle{
+        color: $medblue;}
+        h4[lang=en]{
+        display:block; }
+        h4[lang=de],
+        h4[lang=ar],
+        h4[lang=ru]{
+        display:none;}
+    } 
+}

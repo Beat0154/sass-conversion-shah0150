@@ -1,0 +1,65 @@
+@mixin esp($n,$w,$s){
+    
+    width: ($w - $s*($n - 1)) / $n;
+   
+    margin-left: $s;
+    
+    &:first-child {
+        margin-left: 0;
+    }
+}
+
+@mixin col-4{
+        width:22%;
+        margin-left: 4%;
+        float:left;
+        &:first-child{
+        margin-left: 0;}
+    }
+@mixin col-3{
+        float:left;
+        width: 30%;
+        margin-left: 5%;
+        &:first-child{
+        margin-left: 0;}
+    }
+@mixin yolo{
+        font-size: 1.414rem;
+        li{
+        font-size: 1.414rem;}
+        p{
+        font-size: 1rem;
+        font-weight: 400;}
+}
+@mixin yolo1{
+        min-height: 2rem;
+        border:none;
+        border-left:1px solid $lightgrey; 
+        padding:0 1.0rem;
+        margin:1.0rem 0;
+        background-color: $white;
+}
+@mixin yolo2{
+        width:20%;
+        float: left;
+        background-color: $white;
+}
+@mixin yolo3{
+        position: static;
+        clear:both;
+        width: 100%;
+        padding: 0;
+}
+@mixin yolo4{
+        float: none;
+        letter-spacing: 0.25rem;
+        font-size: 3.998rem;
+        text-align: left;
+}
+@mixin yolo5{
+        display:inline;
+        vertical-align:baseline;
+        float:none;
+        font-size: 4rem;
+        line-height: 6.3968rem;
+}

@@ -1,0 +1,20 @@
+@mixin phone($width) {
+    
+    @media all and (min-width:701px) and (max-width:$width){
+        @content;
+    }  
+}
+
+@mixin tablet($width) {
+    
+    @media all and (min-width:901px) and (max-width:$width){
+        @content;
+    }
+}
+
+@mixin desktop($width) {
+    
+    @media all and (min-width:$width){
+        @content;
+    }
+}
